@@ -69,13 +69,20 @@ function Navbar() {
         } md:hidden fixed top-0 right-0 top-[7vh] w-[70vw] h-[93vh] bg-white shadow`}
       >
         <div className='flex flex-col justify-center p-12 space-y-8 text-gray-500 text-sm h-full'>
-          {/* <Link
+          <Link
+            to='/dashboard'
+            className='hover:text-[#092468]'
+            onClick={toggleSidebar}
+          >
+            Products
+          </Link>
+          <Link
             to='/shopping-cart'
             className='hover:text-[#092468]'
             onClick={toggleSidebar}
           >
             Shopping cart
-          </Link> */}
+          </Link>
           <Link
             to='/login'
             className='hover:text-[#092468] font-black'
@@ -91,7 +98,8 @@ function Navbar() {
 
       <div className='hidden md:flex md:col-span-3 items-center justify-center pl-16'>
             <div className='p-4 space-x-16 text-gray-500 text-sm'>
-                {/* <Link to="/shopping-cart">Shopping cart</Link> */}
+                <Link to="/dashboard">Products</Link>
+                <Link to="/shopping-cart">Shopping cart</Link>
             </div>
         </div>
 
