@@ -20,7 +20,6 @@ const ShoppingCart = () => {
     axios
       .get(`${API_URL}/cart`, config)
       .then((response) => {
-        console.log(response, 'resss');
         setCartItems(response.data.items);
       })
       .catch((error) => {
@@ -57,8 +56,8 @@ const ShoppingCart = () => {
     axios
       .post(`${API_URL}/cart/checkout`, {}, config)
       .then((response) => {
-        console.log(response.data, 'response');
         toast.success('Items checked out successfully!');
+        setCartItems([]);
       })
       .catch((error) => {
         toast.error('Failed to check out items.');
