@@ -73,7 +73,6 @@ const Login = () => {
   <h1 className='text-xl text-[#092468] font-black text-center my-12'>Binary Supermarket</h1>
   <div className="flex flex-col items-center mt-8 border w-full md:w-[35vw] mx-auto pt-8 pb-12 px-4 md:px-16">
     <h1 className='font-black text-black mb-4 text-xl text-center'>Login</h1>
-    <p className='text-xs font-light text-gray-400 mb-6 text-center'>Lorem ipsum doret sit amet caret dovisindus il qeuoreimsi.</p>
     <form onSubmit={handleSubmit} className="w-full">
       <div className="mb-6">
         <input
