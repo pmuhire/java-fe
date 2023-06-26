@@ -79,7 +79,7 @@ const Products = () => {
 
     // Call API to add the items to the cart
     axios
-      .post(`http://localhost:5000/cart/add/${product.id}/${quantity}`, config)
+      .post(`http://localhost:5000/cart/add/${product.id}/${quantity}`,{}, config)
       .then((response) => {
         console.log(response.data, 'response');
         toast.success('Items added to cart successfully!');
