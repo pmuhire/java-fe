@@ -44,7 +44,7 @@ function Table() {
             {data
               .map((item) => (
                 <tr className="bg-[#434343] bg-opacity-[3%] border border-gray-100" key={item._id}>
-                  <td className="px-4 py-2">{item?.customerName}</td>
+                  <td className="px-4 py-2">{item?.customerName || 'Nick'}</td>
                   <td className="px-4 py-2">{item.date}</td>
                   <td className="px-4 py-2">{item?.productId}</td>
                   <td className="px-4 py-2">{item.productName}</td>
