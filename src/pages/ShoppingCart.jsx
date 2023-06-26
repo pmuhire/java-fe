@@ -4,22 +4,28 @@ import { API_URL, config } from '../utils/api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../components/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 const ShoppingCart = () => {
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token")
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
+     //redirect to login form when no token found
+     if(!token){
+      navigate('/login');
+    }
     // Call API to get items in the shopping cart
     axios
-      .get(`http://localhost:5000/cart`, config)
+      .get(`${API_URL}/cart`, config)
       .then((response) => {
-        console.log(response, 'resss');
         setCartItems(response.data.items);
       })
       .catch((error) => {
         console.log('catch err', error);
       });
-  }, []);
+  }, [token]);
 
   useEffect(() => {
     // Fetch item details for each item in the cart
@@ -48,10 +54,10 @@ const ShoppingCart = () => {
   // Function to handle checkout and display the purchased table
   const checkout = () => {
     axios
-      .post(`http://localhost:5000/cart/checkout`, {}, config)
+      .post(`${API_URL}/cart/checkout`, {}, config)
       .then((response) => {
-        console.log(response.data, 'response');
         toast.success('Items checked out successfully!');
+        setCartItems([]);
       })
       .catch((error) => {
         toast.error('Failed to check out items.');

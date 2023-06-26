@@ -83,6 +83,13 @@ function Navbar() {
           >
             Shopping cart
           </Link>
+          {/* <Link
+            to='/report'
+            className='hover:text-[#092468]'
+            onClick={toggleSidebar}
+          >
+            Report
+          </Link> */}
           <Link
             to='/login'
             className='hover:text-[#092468] font-black'
@@ -100,6 +107,7 @@ function Navbar() {
             <div className='p-4 space-x-16 text-gray-500 text-sm'>
                 <Link to="/dashboard">Products</Link>
                 <Link to="/shopping-cart">Shopping cart</Link>
+                {/* <Link to="/report">Report</Link> */}
             </div>
         </div>
 

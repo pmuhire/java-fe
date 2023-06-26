@@ -1,9 +1,9 @@
 import React,{useEffect,useState} from 'react'
 import Navbar from '../components/Navbar'
-import CarPost from '../components/CarPost'
+import Table from '../components/Table'
 import { useNavigate } from 'react-router-dom';
 
-function CarRegistration() {
+function Dashboard() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token")
   useEffect(()=>{
@@ -16,10 +16,10 @@ function CarRegistration() {
     <div>
       <Navbar/>
         <div className='mt-12'>
-            <CarPost/>
+            <Table/>
         </div>
     </div>
   )
 }
 
-export default CarRegistration
+export default Dashboard
