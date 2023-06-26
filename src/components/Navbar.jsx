@@ -21,7 +21,7 @@ function Navbar() {
     <header className='pr-5 md:grid grid-cols-2 md:grid-cols-5 justify-between items-center mb-2'>
       <div className='flex w-full md:flex items-center justify-between'>
         <h1 className='text-2xl text-[#092468] font-black'>
-          <Link to='/dashboard'>App Title</Link>
+          <Link to='/dashboard'>Binary SM</Link>
         </h1>
         <div className='md:hidden ml-4'>
           <button
@@ -69,27 +69,13 @@ function Navbar() {
         } md:hidden fixed top-0 right-0 top-[7vh] w-[70vw] h-[93vh] bg-white shadow`}
       >
         <div className='flex flex-col justify-center p-12 space-y-8 text-gray-500 text-sm h-full'>
-          <Link
-            to='/#'
+          {/* <Link
+            to='/shopping-cart'
             className='hover:text-[#092468]'
             onClick={toggleSidebar}
           >
-            Register Owner
-          </Link>
-          <Link
-            to='/register-car'
-            className='hover:text-[#092468]'
-            onClick={toggleSidebar}
-          >
-            Register Car
-          </Link>
-          <Link
-            to='/dashboard'
-            className='hover:text-[#092468]'
-            onClick={toggleSidebar}
-          >
-            History
-          </Link>
+            Shopping cart
+          </Link> */}
           <Link
             to='/login'
             className='hover:text-[#092468] font-black'
@@ -105,9 +91,7 @@ function Navbar() {
 
       <div className='hidden md:flex md:col-span-3 items-center justify-center pl-16'>
             <div className='p-4 space-x-16 text-gray-500 text-sm'>
-                <Link to="/#">Register Owner</Link>
-                <Link to="/register-car">Register Car</Link>
-                <Link to="/dashboard">History</Link>
+                {/* <Link to="/shopping-cart">Shopping cart</Link> */}
             </div>
         </div>
 

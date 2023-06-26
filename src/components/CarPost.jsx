@@ -123,7 +123,7 @@ const CarPost = () => {
   //       toast.error('Car registration failed');
   //     }
   //   } catch (error) {
-  //     toast.error('An error occurred');
+  //     toast.error(error?.response?.data?.message || 'An error occurred');
   //   }
   //   setLoading(false);
   // };

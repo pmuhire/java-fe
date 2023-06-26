@@ -8,8 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const Signup = () => {
   //form inputs states
     const navigate = useNavigate();
-    const [fullName, setFullName] = useState('');
-    const [nationalId, setNationalId] = useState('');
+    const [firstName, setFirstName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
@@ -20,7 +19,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       //check if all fields are provided
-      if (!fullName || !nationalId || !phone || !password || !email || !confirmPassword ) {
+      if (!firstName || !phone || !password || !email || !confirmPassword ) {
         toast("Provide all fields",{
           position: "top-right",
           hideProgressBar : false,
@@ -44,9 +43,9 @@ const Signup = () => {
       setLoading(true);
       try {
         const response = await axios.post(API_URL+'/users/register', {
+          confirmPassword,
           email,
-          names: fullName,
-          nationalId,
+          firstName,
           password,
           phoneNumber: phone,
         });
@@ -62,8 +61,7 @@ const Signup = () => {
           //clear form inputs
           setEmail('');
           setPassword('');
-          setNationalId('');
-          setFullName('');
+          setFirstName('');
           setConfirmPassword('');
           setPhone('');
     
@@ -96,7 +94,7 @@ const Signup = () => {
   return (
     <div className='pb-12'>
   <ToastContainer/>
-  <h1 className='text-xl text-[#092468] font-black text-center my-12'>App Title</h1>
+  <h1 className='text-xl text-[#092468] font-black text-center my-12'>Binary Supermarket</h1>
   <div className="flex flex-col items-center mt-8 border w-full md:w-[35vw] mx-auto py-6 px-4 md:px-16">
     <h1 className='font-black text-black mb-4 text-xl text-center'>Create account</h1>
     <p className='text-xs font-light text-gray-400 mb-6 text-center'>Lorem ipsum doret sit amet caret dovisindus il qeuoreimsi.</p>
@@ -104,11 +102,11 @@ const Signup = () => {
       <div className="mb-6">
         <input
           type="text"
-          id="fullname"
+          id="firstName"
           className="w-full px-4 py-3 mt-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 placeholder-black text-sm"
-          placeholder="Fullnames"
-          value={fullName}
-          onChange={(e) => setFullName(e.target.value)}
+          placeholder="Name"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
         />
       </div>
       <div className="mb-6">
@@ -119,16 +117,6 @@ const Signup = () => {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
-      <div className="mb-6">
-        <input
-          type="text"
-          id="fullname"
-          className="w-full px-4 py-3 mt-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 placeholder-black text-sm"
-          placeholder="National Id"
-          value={nationalId}
-          onChange={(e) => setNationalId(e.target.value)}
         />
       </div>
       <div className="mb-6">

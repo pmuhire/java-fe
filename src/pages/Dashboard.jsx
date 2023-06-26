@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import Navbar from '../components/Navbar'
-import Table from '../components/Table'
+import Products from '../components/Products'
 import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
@@ -16,8 +16,7 @@ function Dashboard() {
     <div>
       <Navbar/>
         <div className='mt-12'>
-          {/* <h1 className='mb-12'>Welcome, <span className='font-bold'>Nick</span></h1> */}
-            <Table/>
+            <Products/>
         </div>
     </div>
   )
