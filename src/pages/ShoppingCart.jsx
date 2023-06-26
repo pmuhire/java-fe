@@ -6,23 +6,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../components/Navbar'
 
 const ShoppingCart = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: 'Orange',
-      type: 'Type A',
-      price: 100,
-      date: '2023-06-25',
-      quantity: 2,
-    }
-  ]);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     // Call API to get items in the shopping cart
     axios.get(`http://localhost:5000/cart`, config)
       .then((response) => {
         console.log(response,"resss")
-        setCartItems(response.data);
+        setCartItems(response.data.items);
       })
       .catch((error) => {
         console.log('catch err', error);
@@ -63,7 +54,7 @@ const ShoppingCart = () => {
                 <h3 className="text-md font-semibold text-gray-800">
                   {item.name}
                 </h3>
-                <p className="text-gray-600">{item.price} Rwf</p>
+                <p className="text-gray-600">{item.totalPrice} Rwf</p>
                 <p className="text-gray-600">Quantity: {item.quantity}</p>
               </div>
               <button
