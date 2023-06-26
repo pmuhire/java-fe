@@ -103,7 +103,7 @@ const Products = () => {
           return (
             <div key={product.id} className="bg-white rounded-lg p-4 shadow-md">
               <img
-                src={product.image}
+                src="../groceries.png"
                 alt={product.name}
                 className="w-full h-36 object-contain mb-4"
               />
