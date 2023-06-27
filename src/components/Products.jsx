@@ -110,7 +110,7 @@ const Products = () => {
               <h3 className="text-lg font-semibold text-gray-800 mb-2">{product.name}</h3>
               <p className="text-gray-600">{product.productType}</p>
               <p className="text-gray-600">{product.price} Rwf</p>
-              <p className="text-gray-600">{product.inDate}</p>
+              {/* <p className="text-gray-600">{product.inDate}</p> */}
               <div className="flex items-center mt-4">
                 <button
                   className="bg-[#092468] text-white text-sm px-2 py-1 rounded-full"
