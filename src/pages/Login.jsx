@@ -68,10 +68,10 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className='bg-blue-500 min-h-screen'>
   <ToastContainer />
-  <h1 className='text-xl text-[#092468] font-black text-center my-12'>Binary Supermarket</h1>
-  <div className="flex flex-col items-center mt-8 border w-full md:w-[35vw] mx-auto pt-8 pb-12 px-4 md:px-16">
+  <h1 className='text-xl text-white font-black text-center py-12'>Binary Supermarket</h1>
+  <div className="flex flex-col items-center mt-8 border bg-white rounded-md w-full md:w-[35vw] mx-auto pt-8 pb-12 px-4 md:px-16">
     <h1 className='font-black text-black mb-4 text-xl text-center'>Login</h1>
     <form onSubmit={handleSubmit} className="w-full">
       <div className="mb-6">
@@ -96,15 +96,14 @@ const Login = () => {
       </div>
       <button
         type="submit"
-        className="w-full mb-6 flex justify-center mx-auto text-sm px-4 py-3 text-white bg-blue-800 rounded-3xl hover:bg-blue-700"
-        style={{ backgroundColor: '#092468' }}
+        className="w-full mb-6 flex justify-center  mx-auto text-sm px-4 py-3 text-white bg-blue-500 rounded-3xl hover:bg-blue-700"
         disabled={loading}
       >
         {loading ? 'Logging in...' : 'Login'}
       </button>
     </form>
     <p className="mt-4 text-sm text-center">
-      Don't have an account? <a className='text-[#092468] font-bold' href="/signup">Signup</a>.
+      Don't have an account? <a className='text-blue-500 font-bold' href="/signup">Signup</a>.
     </p>
   </div>
 </div>

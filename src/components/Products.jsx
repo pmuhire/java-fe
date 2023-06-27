@@ -29,13 +29,13 @@ const Products = () => {
 
   useEffect(() => {
     fetchData();
-  });
+  },[]);
 
   // Fetch data from the API
   const fetchData = async () => {
     try {
-      const response = await axios.get(`${API_URL}/products/all`, config);
-    //   console.log(response,"response")
+      const response = await axios.get(`${API_URL}/products/`, config);
+      console.log(response,"response")
       setProductsData(response?.data);   //populate the data array with the response data vehicles
     } catch (error) {
       console.log(error);
@@ -92,7 +92,7 @@ const Products = () => {
   };
 
   return (
-    <div>
+    <div className='px-10'>
       <ToastContainer />
       <h2 className="text-xl font-bold text-gray-800">Products</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
@@ -113,20 +113,20 @@ const Products = () => {
               {/* <p className="text-gray-600">{product.inDate}</p> */}
               <div className="flex items-center mt-4">
                 <button
-                  className="bg-[#092468] text-white text-sm px-2 py-1 rounded-full"
+                  className="bg-blue-500 text-white text-sm px-2 py-1 rounded-full"
                   onClick={() => decreaseQuantity(product.id)}
                 >
                   -
                 </button>
                 <p className="text-gray-600 mx-2">{quantity}</p>
                 <button
-                  className="bg-[#092468] text-white text-sm px-2 py-1 rounded-full"
+                  className="bg-blue-500 text-white text-sm px-2 py-1 rounded-full"
                   onClick={() => increaseQuantity(product.id)}
                 >
                   +
                 </button>
                 <button
-                  className="bg-[#092468] text-white text-sm px-4 py-2 rounded-full ml-4"
+                  className="bg-blue-500 text-white text-sm px-4 py-2 rounded-full ml-4"
                   onClick={() => addToCart(product)}
                 >
                   Add to Cart

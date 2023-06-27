@@ -18,9 +18,9 @@ function Navbar() {
   };
 
   return (
-    <header className='pr-5 md:grid grid-cols-2 md:grid-cols-5 justify-between items-center mb-2'>
+    <header className='px-5 bg-blue-500 md:grid grid-cols-2 md:grid-cols-5 justify-between items-center mb-2'>
       <div className='flex w-full md:flex items-center justify-between'>
-        <h1 className='text-2xl text-[#092468] font-black'>
+        <h1 className='text-2xl text-white font-black'>
           <Link to='/dashboard'>Binary SM</Link>
         </h1>
         <div className='md:hidden ml-4'>
@@ -68,10 +68,11 @@ function Navbar() {
           isSidebarOpen ? 'md:block' : 'hidden'
         } md:hidden fixed top-0 right-0 top-[7vh] w-[70vw] h-[93vh] bg-white shadow`}
       >
-        <div className='flex flex-col justify-center p-12 space-y-8 text-gray-500 text-sm h-full'>
+        <div className='flex flex-col justify-center p-12 space-y-8 text-white text-sm h-full'>
           <Link
             to='/dashboard'
-            className='hover:text-[#092468]'
+            className='text-white hover:text-[#092468]'
+            style={{ color: 'white' }}
             onClick={toggleSidebar}
           >
             Products
@@ -92,7 +93,7 @@ function Navbar() {
           </Link> */}
           <Link
             to='/login'
-            className='hover:text-[#092468] font-black'
+            className='text-white hover:text-[#092468] font-black'
             onClick={() => {
               toggleSidebar();
               handleLogout();

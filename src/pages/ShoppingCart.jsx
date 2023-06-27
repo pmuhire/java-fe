@@ -100,7 +100,7 @@ const ShoppingCart = () => {
         </div>
         {cartItems.length > 0 && (
           <button
-            className="bg-[#092468] text-white text-sm px-4 py-2 rounded-full mt-4"
+            className="bg-blue-500 text-white text-sm px-4 py-2 rounded-full mt-4"
             onClick={checkout}
           >
             Checkout
