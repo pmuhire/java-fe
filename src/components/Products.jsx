@@ -103,14 +103,14 @@ const Products = () => {
           return (
             <div key={product.id} className="bg-white rounded-lg p-4 shadow-md">
               <img
-                src={product.image}
+                src="../groceries.png"
                 alt={product.name}
                 className="w-full h-36 object-contain mb-4"
               />
               <h3 className="text-lg font-semibold text-gray-800 mb-2">{product.name}</h3>
               <p className="text-gray-600">{product.productType}</p>
               <p className="text-gray-600">{product.price} Rwf</p>
-              <p className="text-gray-600">{product.inDate}</p>
+              {/* <p className="text-gray-600">{product.inDate}</p> */}
               <div className="flex items-center mt-4">
                 <button
                   className="bg-[#092468] text-white text-sm px-2 py-1 rounded-full"
