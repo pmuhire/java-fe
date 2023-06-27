@@ -57,10 +57,10 @@ const ShoppingCart = () => {
       .post(`${API_URL}/cart/checkout`, {}, config)
       .then((response) => {
         toast.success('Items checked out successfully!');
-        setCartItems([]);
+        navigate('/dashboard');
       })
       .catch((error) => {
-        toast.error('Failed to check out items.');
+        toast.error(error?.response?.data?.message || 'Failed to check out items.');
         console.log('catch errr', error);
       });
   };
